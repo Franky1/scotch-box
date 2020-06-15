@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.box = "scotch/box"
+    config.vm.box_check_update = false
     config.vm.network "private_network", ip: "192.168.33.10"
     config.vm.hostname = "scotchbox"
     config.vm.synced_folder ".", "/var/www", :mount_options => ["dmode=777", "fmode=666"]
@@ -26,7 +27,7 @@ Vagrant.configure("2") do |config|
     # VirtualBox specific settings
     config.vm.provider "virtualbox" do |virtualbox|
         # friendly name of the virtual machine
-        virtualbox.name = "Scotch Box"
+        virtualbox.name = "Scotch.Box"
         # Hide/show the VirtualBox GUI when booting the machine
         virtualbox.gui = true
         # Customize the amount of memory 4GB on the VM:
